@@ -1,0 +1,33 @@
+root = true
+
+; Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace  = true
+insert_final_newline = true
+charset = utf-8
+
+[*.{py,rst,txt}]
+indent_style = space
+trim_trailing_whitespace = true
+indent_size = 4
+end_of_line = LF
+
+[*]
+charset = utf-8
+indent_style = tab
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+; Golang
+[*.go]
+indent_style = tab
+indent_size = 4
+
+; YAML
+[*.{yaml,yml}]
+indent_size = 2

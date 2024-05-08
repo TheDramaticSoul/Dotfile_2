@@ -1,0 +1,70 @@
+# Easier navigation: .., ..., ...., ..... and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Shortcuts
+alias d="cd ~/Desktop"
+alias c="cd ~/codebase"
+
+# List only directories
+alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+
+alias l="ls"
+alias ll="ls -al"
+alias la='ls -A'
+
+# start a local python server
+alias serve="python3 -m http.server"
+
+# start sublime
+alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+
+# Git aliases
+alias gs="git status"
+alias ga="git add -A :/"
+alias gb="git branch"
+alias gc="git commit -m "$1""
+alias gp="git push $1 $2" # gp OR gp [remote] [branch]
+alias pull="git pull"
+alias gt="git tag "$1""
+alias gpt="git push --tags"
+alias co="git checkout"
+
+# add color to tmux
+alias tmux="TERM=screen-256color-bce tmux"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Empty the Trash on all mounted volumes and the main HDD
+# Also, clear Apple’s System Logs to improve shell startup speed
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+# Make Grunt print stack traces by default
+command -v grunt > /dev/null && alias grunt="grunt --stack"
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# executable
+alias img="~/bin/imguru"
+
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec $SHELL -l"
+
+# youtube-dl will use aria2c with 16 parallel connections
+alias youtube-dl="yt-dlp --downloader=aria2c --downloader-args aria2c:'--continue=true --max-concurrent-downloads=16 --max-connection-per-server=16 --split=18 -k 1M'"
+
+# rclone with verbose logging
+alias rclone="rclone -v --stats=60s"
+
+alias sudo='sudo '
+
+alias python="python3"
+alias pip="pip3"
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
