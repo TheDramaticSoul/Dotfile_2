@@ -1,4 +1,4 @@
-# Karan's dotfiles
+# Vishal's dotfiles
 
 ## Installation
 
